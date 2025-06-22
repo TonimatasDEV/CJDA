@@ -75,6 +75,8 @@ public class CJDAImpl extends ListenerAdapter implements CJDA {
             slashCommandDataList.add(command.init(data));
         }
 
+        jda.addEventListener(this);
+
         return jda.updateCommands().addCommands(slashCommandDataList);
     }
     
