@@ -34,8 +34,8 @@ publishing {
             name = "TonimatasDEV"
             url = uri("https://maven.tonimatas.dev/releases")
             credentials {
-                username = System.getenv("USERNAME")
-                password = System.getenv("TOKEN")
+                username = System.getenv("MAVEN_USERNAME")
+                password = System.getenv("MAVEN_TOKEN")
             }
         }
     }
