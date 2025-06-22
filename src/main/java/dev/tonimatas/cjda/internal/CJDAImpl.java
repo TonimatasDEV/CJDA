@@ -60,6 +60,7 @@ public class CJDAImpl extends ListenerAdapter implements CJDA {
         return this;
     }
     
+    @Override
     public CommandListUpdateAction init() {
         List<SlashCommandData> slashCommandDataList = new ArrayList<>();
         
