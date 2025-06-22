@@ -1,6 +1,7 @@
 package dev.tonimatas.cjda.internal;
 
 import dev.tonimatas.cjda.CJDA;
+import dev.tonimatas.cjda.CJDABuilder;
 import dev.tonimatas.cjda.slash.SlashCommand;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -17,16 +18,32 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Implementation of {@link CJDA}
+ * 
+ * @author TonimatasDEV
+ */
 public class CJDAImpl extends ListenerAdapter implements CJDA {
     private static final Logger LOGGER = LoggerFactory.getLogger(CJDAImpl.class);
     private final Map<String, SlashCommand> slashCommands = new HashMap<>();
     private final JDA jda;
     private final LocalizationFunction localization;
 
+    /**
+     * This should not be used. Please use {@link CJDABuilder}
+     * 
+     * @param jda Your {@link JDA} instance
+     */
     public CJDAImpl(JDA jda) {
         this(jda, null);
     }
-    
+
+    /**
+     * This should not be used. Please use {@link CJDABuilder}
+     * 
+     * @param jda Your {@link JDA} instance
+     * @param localization Your {@link LocalizationFunction} instance
+     */
     public CJDAImpl(JDA jda, LocalizationFunction localization) {
         this.jda = jda;
         this.localization = localization;
@@ -52,7 +69,7 @@ public class CJDAImpl extends ListenerAdapter implements CJDA {
     }
 
     @Override
-    public CJDA registerCommand(SlashCommand... commands) {
+    public CJDA registerCommands(SlashCommand... commands) {
         for (SlashCommand command : commands) {
             registerCommand(command);
         }
