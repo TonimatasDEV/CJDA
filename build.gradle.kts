@@ -3,10 +3,8 @@ plugins {
     `maven-publish`
 }
 
-val projectVersion : String by project
-
 group = "dev.tonimatas"
-version = projectVersion
+version = System.getenv("PROJECT_VERSION") ?: "dev"
 
 repositories {
     mavenCentral()
