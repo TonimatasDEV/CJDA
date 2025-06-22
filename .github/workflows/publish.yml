@@ -2,7 +2,8 @@
 name: publish.yml
 
 on:
-  release: null
+  release:
+    types: [published]
 
 jobs:
   publish:
