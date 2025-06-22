@@ -3,7 +3,7 @@ name: publish.yml
 
 on:
   release:
-    types: [published]
+    types: [created]
 
 jobs:
   publish:
