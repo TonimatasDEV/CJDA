@@ -26,3 +26,4 @@ jobs:
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_TOKEN: ${{ secrets.MAVEN_TOKEN }}
+          PROJECT_VERSION: ${{ github.event.release.tag_name }}
