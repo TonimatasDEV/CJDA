@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.interactions.InteractionContextType;
 import net.dv8tion.jda.api.interactions.commands.SlashCommandInteraction;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 
-import java.util.List;
+import java.util.Set;
 
 /**
  * Slash command interface for CJDA.
@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface SlashCommand {
     /**
-     * It is called when a slash command with the {@link SlashCommand#getCommandName()} is executed in Discord.
+     * It is called when a slash command with the {@link SlashCommand#getName()} is executed in Discord.
      *
      * @param interaction The slash command interaction that contains important information
      */
@@ -36,7 +36,7 @@ public interface SlashCommand {
      * 
      * @return The command name
      */
-    String getCommandName();
+    String getName();
 
     /**
      * Used to add a default command description {@link SlashCommandData#setDescription(String)}.
@@ -51,5 +51,5 @@ public interface SlashCommand {
      * 
      * @return The command contexts
      */
-    List<InteractionContextType> getContexts();
+    Set<InteractionContextType> getContexts();
 }

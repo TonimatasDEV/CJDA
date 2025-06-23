@@ -61,11 +61,11 @@ public class CJDAImpl extends ListenerAdapter implements CJDA {
     @Override
     public void registerCommand(SlashCommand command) {
         if (isRegistered(command)) {
-            LOGGER.error("Slash command {} is already registered!", command.getCommandName());
+            LOGGER.error("Slash command {} is already registered!", command.getName());
             return;
         }
 
-        slashCommands.put(command.getCommandName(), command);
+        slashCommands.put(command.getName(), command);
     }
 
     @Override
@@ -82,7 +82,7 @@ public class CJDAImpl extends ListenerAdapter implements CJDA {
         List<SlashCommandData> slashCommandDataList = new ArrayList<>();
         
         for (SlashCommand command : slashCommands.values()) {
-            SlashCommandData data = Commands.slash(command.getCommandName(), command.getDescription());
+            SlashCommandData data = Commands.slash(command.getName(), command.getDescription());
             
             if (localization != null) {
                 data.setLocalizationFunction(localization);
@@ -98,6 +98,6 @@ public class CJDAImpl extends ListenerAdapter implements CJDA {
     }
     
     private boolean isRegistered(SlashCommand command) {
-        return slashCommands.get(command.getCommandName()) != null;
+        return slashCommands.get(command.getName()) != null;
     }
 }
