@@ -14,7 +14,9 @@ public final class CJDABuilder {
     /**
      * What are you doing reading this useless constructor?
      */
-    public CJDABuilder() {}
+    private CJDABuilder() {
+        // Necessary to delete Javadocs warnings :)
+    }
 
     /**
      * Create a simple CJDA instance for your commands.
