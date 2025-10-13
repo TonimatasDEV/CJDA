@@ -11,9 +11,7 @@ repositories {
 }
 
 dependencies {
-    implementation("net.dv8tion:JDA:5.6.1") {
-        exclude(module = "opus-java")
-    }
+    implementation("net.dv8tion:JDA:6.0.0")
 }
 
 val sourcesJar by tasks.registering(Jar::class) {
